@@ -37,6 +37,22 @@ namespace Server
             }
             return null;
         }
+        public bool Login(string login, string password)
+        {
+            string query = "SELECT login, password FROM Users WHERE login = @Login AND password = @Password;";
+            using (SqliteCommand cmd = new SqliteCommand(query, _dbConnection))
+            {
+                cmd.Parameters.AddWithValue("@Login", login);
+                cmd.Parameters.AddWithValue("@Password", password);
+                using (var reader = cmd.ExecuteReader())
+                {
+                    if (reader.Read())
+                        return true;
+                    else
+                        return false;
+                }
+            }
+        }
     }
     public class RegistrationStatus
     {

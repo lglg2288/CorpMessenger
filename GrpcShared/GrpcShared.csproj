@@ -18,6 +18,7 @@
   <ItemGroup>
     <Folder Include="Protos\" />
     <Protobuf Include="Protos\register.proto" GrpcServices="Both" />
+    <Protobuf Include="Protos\login.proto" GrpcServices="Both" />
   </ItemGroup>
 
 </Project>

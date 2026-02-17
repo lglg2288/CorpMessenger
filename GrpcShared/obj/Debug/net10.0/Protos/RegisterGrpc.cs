@@ -7,7 +7,7 @@
 
 using grpc = global::Grpc.Core;
 
-namespace MessengerAvalonia.Shared {
+namespace MessengerAvalonia.Shared.RegisterGrpc {
   /// <summary>
   ///Noun + er/Service
   /// </summary>
@@ -49,12 +49,12 @@ namespace MessengerAvalonia.Shared {
     }
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::MessengerAvalonia.Shared.RegisterRequest> __Marshaller_registration_RegisterRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::MessengerAvalonia.Shared.RegisterRequest.Parser));
+    static readonly grpc::Marshaller<global::MessengerAvalonia.Shared.RegisterGrpc.RegisterRequest> __Marshaller_registration_RegisterRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::MessengerAvalonia.Shared.RegisterGrpc.RegisterRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::MessengerAvalonia.Shared.RegisterResponse> __Marshaller_registration_RegisterResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::MessengerAvalonia.Shared.RegisterResponse.Parser));
+    static readonly grpc::Marshaller<global::MessengerAvalonia.Shared.RegisterGrpc.RegisterResponse> __Marshaller_registration_RegisterResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::MessengerAvalonia.Shared.RegisterGrpc.RegisterResponse.Parser));
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::MessengerAvalonia.Shared.RegisterRequest, global::MessengerAvalonia.Shared.RegisterResponse> __Method_SignUp = new grpc::Method<global::MessengerAvalonia.Shared.RegisterRequest, global::MessengerAvalonia.Shared.RegisterResponse>(
+    static readonly grpc::Method<global::MessengerAvalonia.Shared.RegisterGrpc.RegisterRequest, global::MessengerAvalonia.Shared.RegisterGrpc.RegisterResponse> __Method_SignUp = new grpc::Method<global::MessengerAvalonia.Shared.RegisterGrpc.RegisterRequest, global::MessengerAvalonia.Shared.RegisterGrpc.RegisterResponse>(
         grpc::MethodType.Unary,
         __ServiceName,
         "SignUp",
@@ -64,7 +64,7 @@ namespace MessengerAvalonia.Shared {
     /// <summary>Service descriptor</summary>
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
     {
-      get { return global::MessengerAvalonia.Shared.RegisterReflection.Descriptor.Services[0]; }
+      get { return global::MessengerAvalonia.Shared.RegisterGrpc.RegisterReflection.Descriptor.Services[0]; }
     }
 
     /// <summary>Base class for server-side implementations of Register</summary>
@@ -78,7 +78,7 @@ namespace MessengerAvalonia.Shared {
       /// <param name="context">The context of the server-side call handler being invoked.</param>
       /// <returns>The response to send back to the client (wrapped by a task).</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task<global::MessengerAvalonia.Shared.RegisterResponse> SignUp(global::MessengerAvalonia.Shared.RegisterRequest request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::MessengerAvalonia.Shared.RegisterGrpc.RegisterResponse> SignUp(global::MessengerAvalonia.Shared.RegisterGrpc.RegisterRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -121,7 +121,7 @@ namespace MessengerAvalonia.Shared {
       /// <param name="cancellationToken">An optional token for canceling the call.</param>
       /// <returns>The response received from the server.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::MessengerAvalonia.Shared.RegisterResponse SignUp(global::MessengerAvalonia.Shared.RegisterRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual global::MessengerAvalonia.Shared.RegisterGrpc.RegisterResponse SignUp(global::MessengerAvalonia.Shared.RegisterGrpc.RegisterRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return SignUp(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
@@ -132,7 +132,7 @@ namespace MessengerAvalonia.Shared {
       /// <param name="options">The options for the call.</param>
       /// <returns>The response received from the server.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::MessengerAvalonia.Shared.RegisterResponse SignUp(global::MessengerAvalonia.Shared.RegisterRequest request, grpc::CallOptions options)
+      public virtual global::MessengerAvalonia.Shared.RegisterGrpc.RegisterResponse SignUp(global::MessengerAvalonia.Shared.RegisterGrpc.RegisterRequest request, grpc::CallOptions options)
       {
         return CallInvoker.BlockingUnaryCall(__Method_SignUp, null, options, request);
       }
@@ -144,8 +144,8 @@ namespace MessengerAvalonia.Shared {
       /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
       /// <param name="cancellationToken">An optional token for canceling the call.</param>
       /// <returns>The call object.</returns>
-      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_pHttpProtocolException: The HTTP/2 server closed the connection. HTTP/2 error code 'HTTP_1_1_REQUIRED' (0xd). (HttpProtocolError) login", null)]
-      public virtual grpc::AsyncUnaryCall<global::MessengerAvalonia.Shared.RegisterResponse> SignUpAsync(global::MessengerAvalonia.Shared.RegisterRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::MessengerAvalonia.Shared.RegisterGrpc.RegisterResponse> SignUpAsync(global::MessengerAvalonia.Shared.RegisterGrpc.RegisterRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return SignUpAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
@@ -156,7 +156,7 @@ namespace MessengerAvalonia.Shared {
       /// <param name="options">The options for the call.</param>
       /// <returns>The call object.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::MessengerAvalonia.Shared.RegisterResponse> SignUpAsync(global::MessengerAvalonia.Shared.RegisterRequest request, grpc::CallOptions options)
+      public virtual grpc::AsyncUnaryCall<global::MessengerAvalonia.Shared.RegisterGrpc.RegisterResponse> SignUpAsync(global::MessengerAvalonia.Shared.RegisterGrpc.RegisterRequest request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_SignUp, null, options, request);
       }
@@ -184,7 +184,7 @@ namespace MessengerAvalonia.Shared {
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     public static void BindService(grpc::ServiceBinderBase serviceBinder, RegisterBase serviceImpl)
     {
-      serviceBinder.AddMethod(__Method_SignUp, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::MessengerAvalonia.Shared.RegisterRequest, global::MessengerAvalonia.Shared.RegisterResponse>(serviceImpl.SignUp));
+      serviceBinder.AddMethod(__Method_SignUp, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::MessengerAvalonia.Shared.RegisterGrpc.RegisterRequest, global::MessengerAvalonia.Shared.RegisterGrpc.RegisterResponse>(serviceImpl.SignUp));
     }
 
   }

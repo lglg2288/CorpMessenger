@@ -9,31 +9,5 @@
         Icon="/Assets/avalonia-logo.ico"
         Title="Client"
 	    Width="780" Height="520">
-
-    <Design.DataContext>
-        <!-- This only sets the DataContext for the previewer in an IDE,
-             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
-        <vm:MainWindowViewModel/>
-    </Design.DataContext>
-    
-	<StackPanel Spacing="5">
-		<TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-		<TextBlock Text="Логин:"/>
-		<TextBox x:Name="LoginTextBox"
-				 Watermark="Введите логин"
-				 Padding="8,6"/>
-		<TextBlock Text="Пароль:"/>
-		<TextBox x:Name="PasswordTextBox"
-				 PasswordChar="•"
-				 Watermark="Введите пароль"
-				 Padding="8,6"/>
-		<Button x:Name="LoginButton"
-                    Content="Войти"
-                    Padding="20,8"
-                    Classes="primary"/>
-		<Button x:Name="CancelButton"
-				Content="Отмена"
-				Padding="20,8"/>
-	</StackPanel>
-
+    Three Point Messenger
 </Window>

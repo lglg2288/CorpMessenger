@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+option csharp_namespace = "MessengerAvalonia.Shared.LoginGrpc";
+
+package Login;
+
+service Loginer {  //Noun + er/Service
+  rpc SignIn (LoginRequest) returns (LoginResponse);  // Unary RPC
+  // стриминг: rpc ServerStream (Request) returns (stream Reply);
+}
+
+message LoginRequest {
+  string login = 1;
+  string password = 2;	
+}
+
+message LoginResponse {
+  bool Success = 1;
+  string message = 2;
+}

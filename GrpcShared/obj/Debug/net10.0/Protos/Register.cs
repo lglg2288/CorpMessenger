@@ -9,7 +9,7 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-namespace MessengerAvalonia.Shared {
+namespace MessengerAvalonia.Shared.RegisterGrpc {
 
   /// <summary>Holder for reflection information generated from Protos/register.proto</summary>
   public static partial class RegisterReflection {
@@ -29,12 +29,13 @@ namespace MessengerAvalonia.Shared {
             "NAoQUmVnaXN0ZXJSZXNwb25zZRIPCgdTdWNjZXNzGAEgASgIEg8KB21lc3Nh",
             "Z2UYAiABKAkyUwoIUmVnaXN0ZXISRwoGU2lnblVwEh0ucmVnaXN0cmF0aW9u",
             "LlJlZ2lzdGVyUmVxdWVzdBoeLnJlZ2lzdHJhdGlvbi5SZWdpc3RlclJlc3Bv",
-            "bnNlQhuqAhhNZXNzZW5nZXJBdmFsb25pYS5TaGFyZWRiBnByb3RvMw=="));
+            "bnNlQiiqAiVNZXNzZW5nZXJBdmFsb25pYS5TaGFyZWQuUmVnaXN0ZXJHcnBj",
+            "YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::MessengerAvalonia.Shared.RegisterRequest), global::MessengerAvalonia.Shared.RegisterRequest.Parser, new[]{ "Login", "Password" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::MessengerAvalonia.Shared.RegisterResponse), global::MessengerAvalonia.Shared.RegisterResponse.Parser, new[]{ "Success", "Message" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::MessengerAvalonia.Shared.RegisterGrpc.RegisterRequest), global::MessengerAvalonia.Shared.RegisterGrpc.RegisterRequest.Parser, new[]{ "Login", "Password" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::MessengerAvalonia.Shared.RegisterGrpc.RegisterResponse), global::MessengerAvalonia.Shared.RegisterGrpc.RegisterResponse.Parser, new[]{ "Success", "Message" }, null, null, null, null)
           }));
     }
     #endregion
@@ -56,7 +57,7 @@ namespace MessengerAvalonia.Shared {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::MessengerAvalonia.Shared.RegisterReflection.Descriptor.MessageTypes[0]; }
+      get { return global::MessengerAvalonia.Shared.RegisterGrpc.RegisterReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -291,7 +292,7 @@ namespace MessengerAvalonia.Shared {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::MessengerAvalonia.Shared.RegisterReflection.Descriptor.MessageTypes[1]; }
+      get { return global::MessengerAvalonia.Shared.RegisterGrpc.RegisterReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

@@ -1,5 +1,5 @@
 using Microsoft.AspNetCore.Server.Kestrel.Core;
-using MessengerAvalonia.Shared;
+using MessengerAvalonia.Shared.RegisterGrpc;
 using Server.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -14,4 +14,5 @@ builder.WebHost.ConfigureKestrel(options =>
 
 var app = builder.Build();
 app.MapGrpcService<RegisterService>();
+app.MapGrpcService<LoginService>();
 app.Run();

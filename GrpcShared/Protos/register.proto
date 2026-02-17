@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-option csharp_namespace = "MessengerAvalonia.Shared";
+option csharp_namespace = "MessengerAvalonia.Shared.RegisterGrpc";
 
 package registration;
 

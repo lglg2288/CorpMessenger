@@ -3,44 +3,60 @@
   "WorkspaceRootPath": "C:\\Users\\Public\\Projects\\MessengerAvalonia\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3461765F-60A1-21BC-764E-FC799869FE2F}|Server\\Server.csproj|c:\\users\\public\\projects\\messengeravalonia\\server\\databasehelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3461765F-60A1-21BC-764E-FC799869FE2F}|Server\\Server.csproj|solutionrelative:server\\databasehelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3461765F-60A1-21BC-764E-FC799869FE2F}|Server\\Server.csproj|c:\\users\\public\\projects\\messengeravalonia\\server\\services\\registerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3461765F-60A1-21BC-764E-FC799869FE2F}|Server\\Server.csproj|solutionrelative:server\\services\\registerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Public\\Projects\\MessengerAvalonia\\GrpcShared\\obj\\Debug\\net10.0\\Protos\\RegisterGrpc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:GrpcShared\\obj\\Debug\\net10.0\\Protos\\RegisterGrpc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{3461765F-60A1-21BC-764E-FC799869FE2F}|Server\\Server.csproj|c:\\users\\public\\projects\\messengeravalonia\\server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3461765F-60A1-21BC-764E-FC799869FE2F}|Server\\Server.csproj|solutionrelative:server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AE7EEA74-2FE0-136F-D797-854FD87E022A}|Client\\Client.csproj|c:\\users\\public\\projects\\messengeravalonia\\client\\views\\registerwindow.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AE7EEA74-2FE0-136F-D797-854FD87E022A}|Client\\Client.csproj|solutionrelative:client\\views\\registerwindow.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Public\\Projects\\MessengerAvalonia\\GrpcShared\\obj\\Debug\\net10.0\\Protos\\LoginGrpc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:GrpcShared\\obj\\Debug\\net10.0\\Protos\\LoginGrpc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AE7EEA74-2FE0-136F-D797-854FD87E022A}|Client\\Client.csproj|c:\\users\\public\\projects\\messengeravalonia\\client\\views\\registerwindow.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}",
-      "RelativeMoniker": "D:0:0:{AE7EEA74-2FE0-136F-D797-854FD87E022A}|Client\\Client.csproj|solutionrelative:client\\views\\registerwindow.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}"
+      "AbsoluteMoniker": "D:0:0:{3461765F-60A1-21BC-764E-FC799869FE2F}|Server\\Server.csproj|c:\\users\\public\\projects\\messengeravalonia\\server\\services\\loginservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3461765F-60A1-21BC-764E-FC799869FE2F}|Server\\Server.csproj|solutionrelative:server\\services\\loginservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F7E0F72C-33B7-07C5-CAFD-34A3C407A356}|GrpcShared\\GrpcShared.csproj|c:\\users\\public\\projects\\messengeravalonia\\grpcshared\\protos\\login.proto||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{F7E0F72C-33B7-07C5-CAFD-34A3C407A356}|GrpcShared\\GrpcShared.csproj|solutionrelative:grpcshared\\protos\\login.proto||{3B902123-F8A7-4915-9F01-361F908088D0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F7E0F72C-33B7-07C5-CAFD-34A3C407A356}|GrpcShared\\GrpcShared.csproj|c:\\users\\public\\projects\\messengeravalonia\\grpcshared\\protos\\register.proto||{3B902123-F8A7-4915-9F01-361F908088D0}",
       "RelativeMoniker": "D:0:0:{F7E0F72C-33B7-07C5-CAFD-34A3C407A356}|GrpcShared\\GrpcShared.csproj|solutionrelative:grpcshared\\protos\\register.proto||{3B902123-F8A7-4915-9F01-361F908088D0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AE7EEA74-2FE0-136F-D797-854FD87E022A}|Client\\Client.csproj|c:\\users\\public\\projects\\messengeravalonia\\client\\views\\mainwindow.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AE7EEA74-2FE0-136F-D797-854FD87E022A}|Client\\Client.csproj|solutionrelative:client\\views\\mainwindow.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3461765F-60A1-21BC-764E-FC799869FE2F}|Server\\Server.csproj|c:\\users\\public\\projects\\messengeravalonia\\server\\services\\registerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3461765F-60A1-21BC-764E-FC799869FE2F}|Server\\Server.csproj|solutionrelative:server\\services\\registerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AE7EEA74-2FE0-136F-D797-854FD87E022A}|Client\\Client.csproj|c:\\users\\public\\projects\\messengeravalonia\\client\\views\\registerwindow.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AE7EEA74-2FE0-136F-D797-854FD87E022A}|Client\\Client.csproj|solutionrelative:client\\views\\registerwindow.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3461765F-60A1-21BC-764E-FC799869FE2F}|Server\\Server.csproj|c:\\users\\public\\projects\\messengeravalonia\\server\\databasehelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3461765F-60A1-21BC-764E-FC799869FE2F}|Server\\Server.csproj|solutionrelative:server\\databasehelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AE7EEA74-2FE0-136F-D797-854FD87E022A}|Client\\Client.csproj|c:\\users\\public\\projects\\messengeravalonia\\client\\views\\registerwindow.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}",
+      "RelativeMoniker": "D:0:0:{AE7EEA74-2FE0-136F-D797-854FD87E022A}|Client\\Client.csproj|solutionrelative:client\\views\\registerwindow.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AE7EEA74-2FE0-136F-D797-854FD87E022A}|Client\\Client.csproj|c:\\users\\public\\projects\\messengeravalonia\\client\\viewlocator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AE7EEA74-2FE0-136F-D797-854FD87E022A}|Client\\Client.csproj|solutionrelative:client\\viewlocator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AE7EEA74-2FE0-136F-D797-854FD87E022A}|Client\\Client.csproj|c:\\users\\public\\projects\\messengeravalonia\\client\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AE7EEA74-2FE0-136F-D797-854FD87E022A}|Client\\Client.csproj|solutionrelative:client\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{AE7EEA74-2FE0-136F-D797-854FD87E022A}|Client\\Client.csproj|c:\\users\\public\\projects\\messengeravalonia\\client\\views\\mainwindow.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}",
       "RelativeMoniker": "D:0:0:{AE7EEA74-2FE0-136F-D797-854FD87E022A}|Client\\Client.csproj|solutionrelative:client\\views\\mainwindow.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F7E0F72C-33B7-07C5-CAFD-34A3C407A356}|GrpcShared\\GrpcShared.csproj|c:\\users\\public\\projects\\messengeravalonia\\grpcshared\\grpcshared.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{F7E0F72C-33B7-07C5-CAFD-34A3C407A356}|GrpcShared\\GrpcShared.csproj|solutionrelative:grpcshared\\grpcshared.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Public\\Projects\\MessengerAvalonia\\GrpcShared\\obj\\Debug\\net10.0\\Protos\\RegisterGrpc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:GrpcShared\\obj\\Debug\\net10.0\\Protos\\RegisterGrpc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AE7EEA74-2FE0-136F-D797-854FD87E022A}|Client\\Client.csproj|c:\\users\\public\\projects\\messengeravalonia\\client\\views\\mainwindow.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AE7EEA74-2FE0-136F-D797-854FD87E022A}|Client\\Client.csproj|solutionrelative:client\\views\\mainwindow.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{AE7EEA74-2FE0-136F-D797-854FD87E022A}|Client\\Client.csproj|c:\\users\\public\\projects\\messengeravalonia\\client\\views\\incomingcallwindow.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}",
@@ -62,7 +78,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Bookmark",
@@ -70,34 +86,56 @@
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
-            },
-            {
-              "$type": "Bookmark",
               "Name": "ST:0:0:{73068c07-fba1-453f-99ae-6edf972119b2}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "DatabaseHelper.cs",
-              "DocumentMoniker": "C:\\Users\\Public\\Projects\\MessengerAvalonia\\Server\\DatabaseHelper.cs",
-              "RelativeDocumentMoniker": "Server\\DatabaseHelper.cs",
-              "ToolTip": "C:\\Users\\Public\\Projects\\MessengerAvalonia\\Server\\DatabaseHelper.cs",
-              "RelativeToolTip": "Server\\DatabaseHelper.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAhAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "LoginGrpc.cs",
+              "DocumentMoniker": "C:\\Users\\Public\\Projects\\MessengerAvalonia\\GrpcShared\\obj\\Debug\\net10.0\\Protos\\LoginGrpc.cs",
+              "RelativeDocumentMoniker": "GrpcShared\\obj\\Debug\\net10.0\\Protos\\LoginGrpc.cs",
+              "ToolTip": "C:\\Users\\Public\\Projects\\MessengerAvalonia\\GrpcShared\\obj\\Debug\\net10.0\\Protos\\LoginGrpc.cs",
+              "RelativeToolTip": "GrpcShared\\obj\\Debug\\net10.0\\Protos\\LoginGrpc.cs",
+              "ViewState": "AgIAAHoAAAAAAAAAAAAAwIgAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-17T14:54:39.882Z",
+              "WhenOpened": "2026-02-17T18:45:52.882Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
+              "Title": "register.proto",
+              "DocumentMoniker": "C:\\Users\\Public\\Projects\\MessengerAvalonia\\GrpcShared\\Protos\\register.proto",
+              "RelativeDocumentMoniker": "GrpcShared\\Protos\\register.proto",
+              "ToolTip": "C:\\Users\\Public\\Projects\\MessengerAvalonia\\GrpcShared\\Protos\\register.proto",
+              "RelativeToolTip": "GrpcShared\\Protos\\register.proto",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003853|",
+              "WhenOpened": "2026-02-17T11:45:21.515Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "login.proto",
+              "DocumentMoniker": "C:\\Users\\Public\\Projects\\MessengerAvalonia\\GrpcShared\\Protos\\login.proto",
+              "RelativeDocumentMoniker": "GrpcShared\\Protos\\login.proto",
+              "ToolTip": "C:\\Users\\Public\\Projects\\MessengerAvalonia\\GrpcShared\\Protos\\login.proto",
+              "RelativeToolTip": "GrpcShared\\Protos\\login.proto",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003853|",
+              "WhenOpened": "2026-02-17T18:06:04.376Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "RegisterService.cs",
               "DocumentMoniker": "C:\\Users\\Public\\Projects\\MessengerAvalonia\\Server\\Services\\RegisterService.cs",
               "RelativeDocumentMoniker": "Server\\Services\\RegisterService.cs",
               "ToolTip": "C:\\Users\\Public\\Projects\\MessengerAvalonia\\Server\\Services\\RegisterService.cs",
               "RelativeToolTip": "Server\\Services\\RegisterService.cs",
-              "ViewState": "AgIAAAcAAAAAAAAAAAAmwBkAAAAsAAAAAAAAAA==",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAQwB0AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-17T11:43:03.644Z",
               "EditorCaption": ""
@@ -105,116 +143,87 @@
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "register.proto",
-              "DocumentMoniker": "C:\\Users\\Public\\Projects\\MessengerAvalonia\\GrpcShared\\Protos\\register.proto",
-              "RelativeDocumentMoniker": "GrpcShared\\Protos\\register.proto",
-              "ToolTip": "C:\\Users\\Public\\Projects\\MessengerAvalonia\\GrpcShared\\Protos\\register.proto",
-              "RelativeToolTip": "GrpcShared\\Protos\\register.proto",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003853|",
-              "WhenOpened": "2026-02-17T11:45:21.515Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "RegisterGrpc.cs",
-              "DocumentMoniker": "C:\\Users\\Public\\Projects\\MessengerAvalonia\\GrpcShared\\obj\\Debug\\net10.0\\Protos\\RegisterGrpc.cs",
-              "RelativeDocumentMoniker": "GrpcShared\\obj\\Debug\\net10.0\\Protos\\RegisterGrpc.cs",
-              "ToolTip": "C:\\Users\\Public\\Projects\\MessengerAvalonia\\GrpcShared\\obj\\Debug\\net10.0\\Protos\\RegisterGrpc.cs",
-              "RelativeToolTip": "GrpcShared\\obj\\Debug\\net10.0\\Protos\\RegisterGrpc.cs",
-              "ViewState": "AgIAAIYAAAAAAAAAAAA+wJIAAADGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-17T12:09:46.016Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
               "Title": "RegisterWindow.axaml.cs",
               "DocumentMoniker": "C:\\Users\\Public\\Projects\\MessengerAvalonia\\Client\\Views\\RegisterWindow.axaml.cs",
               "RelativeDocumentMoniker": "Client\\Views\\RegisterWindow.axaml.cs",
               "ToolTip": "C:\\Users\\Public\\Projects\\MessengerAvalonia\\Client\\Views\\RegisterWindow.axaml.cs",
               "RelativeToolTip": "Client\\Views\\RegisterWindow.axaml.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAAwB8AAAAyAAAAAAAAAA==",
+              "ViewState": "AgIAABAAAAAAAAAAAAAQwB8AAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-17T12:00:06.953Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-17T12:00:06.953Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 7,
+              "Title": "DatabaseHelper.cs",
+              "DocumentMoniker": "C:\\Users\\Public\\Projects\\MessengerAvalonia\\Server\\DatabaseHelper.cs",
+              "RelativeDocumentMoniker": "Server\\DatabaseHelper.cs",
+              "ToolTip": "C:\\Users\\Public\\Projects\\MessengerAvalonia\\Server\\DatabaseHelper.cs",
+              "RelativeToolTip": "Server\\DatabaseHelper.cs",
+              "ViewState": "AgIAACIAAAAAAAAAAAAqwDYAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-17T14:54:39.882Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Public\\Projects\\MessengerAvalonia\\Server\\Program.cs",
               "RelativeDocumentMoniker": "Server\\Program.cs",
               "ToolTip": "C:\\Users\\Public\\Projects\\MessengerAvalonia\\Server\\Program.cs",
               "RelativeToolTip": "Server\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAaAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-17T12:10:56.088Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 2,
+              "Title": "LoginService.cs",
+              "DocumentMoniker": "C:\\Users\\Public\\Projects\\MessengerAvalonia\\Server\\Services\\LoginService.cs",
+              "RelativeDocumentMoniker": "Server\\Services\\LoginService.cs",
+              "ToolTip": "C:\\Users\\Public\\Projects\\MessengerAvalonia\\Server\\Services\\LoginService.cs",
+              "RelativeToolTip": "Server\\Services\\LoginService.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAADgvx0AAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-17T18:28:56.316Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "RegisterWindow.axaml",
               "DocumentMoniker": "C:\\Users\\Public\\Projects\\MessengerAvalonia\\Client\\Views\\RegisterWindow.axaml",
               "RelativeDocumentMoniker": "Client\\Views\\RegisterWindow.axaml",
               "ToolTip": "C:\\Users\\Public\\Projects\\MessengerAvalonia\\Client\\Views\\RegisterWindow.axaml",
               "RelativeToolTip": "Client\\Views\\RegisterWindow.axaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-02-17T11:59:52.708Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "MainWindow.axaml.cs",
-              "DocumentMoniker": "C:\\Users\\Public\\Projects\\MessengerAvalonia\\Client\\Views\\MainWindow.axaml.cs",
-              "RelativeDocumentMoniker": "Client\\Views\\MainWindow.axaml.cs",
-              "ToolTip": "C:\\Users\\Public\\Projects\\MessengerAvalonia\\Client\\Views\\MainWindow.axaml.cs",
-              "RelativeToolTip": "Client\\Views\\MainWindow.axaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-17T11:58:27.324Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "MainWindow.axaml",
-              "DocumentMoniker": "C:\\Users\\Public\\Projects\\MessengerAvalonia\\Client\\Views\\MainWindow.axaml",
-              "RelativeDocumentMoniker": "Client\\Views\\MainWindow.axaml",
-              "ToolTip": "C:\\Users\\Public\\Projects\\MessengerAvalonia\\Client\\Views\\MainWindow.axaml",
-              "RelativeToolTip": "Client\\Views\\MainWindow.axaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-02-17T11:57:54.402Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "GrpcShared.csproj",
-              "DocumentMoniker": "C:\\Users\\Public\\Projects\\MessengerAvalonia\\GrpcShared\\GrpcShared.csproj",
-              "RelativeDocumentMoniker": "GrpcShared\\GrpcShared.csproj",
-              "ToolTip": "C:\\Users\\Public\\Projects\\MessengerAvalonia\\GrpcShared\\GrpcShared.csproj",
-              "RelativeToolTip": "GrpcShared\\GrpcShared.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-02-17T11:44:57.649Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-17T11:59:52.708Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 10,
-              "Title": "IncomingCallWindow.axaml",
-              "DocumentMoniker": "C:\\Users\\Public\\Projects\\MessengerAvalonia\\Client\\Views\\IncomingCallWindow.axaml",
-              "RelativeDocumentMoniker": "Client\\Views\\IncomingCallWindow.axaml",
-              "ToolTip": "C:\\Users\\Public\\Projects\\MessengerAvalonia\\Client\\Views\\IncomingCallWindow.axaml",
-              "RelativeToolTip": "Client\\Views\\IncomingCallWindow.axaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-02-17T10:26:09.491Z",
-              "EditorCaption": ""
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Public\\Projects\\MessengerAvalonia\\Client\\Program.cs",
+              "RelativeDocumentMoniker": "Client\\Program.cs",
+              "ToolTip": "C:\\Users\\Public\\Projects\\MessengerAvalonia\\Client\\Program.cs",
+              "RelativeToolTip": "Client\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-17T18:09:15.284Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ViewLocator.cs",
+              "DocumentMoniker": "C:\\Users\\Public\\Projects\\MessengerAvalonia\\Client\\ViewLocator.cs",
+              "RelativeDocumentMoniker": "Client\\ViewLocator.cs",
+              "ToolTip": "C:\\Users\\Public\\Projects\\MessengerAvalonia\\Client\\ViewLocator.cs",
+              "RelativeToolTip": "Client\\ViewLocator.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-17T18:09:18.442Z"
             },
             {
               "$type": "Document",
@@ -225,11 +234,57 @@
               "ToolTip": "C:\\Users\\Public\\Projects\\MessengerAvalonia\\Client\\Views\\MainWindow.axaml",
               "RelativeToolTip": "Client\\Views\\MainWindow.axaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-02-17T10:07:16.502Z"
+              "WhenOpened": "2026-02-17T18:00:15.465Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 12,
+              "Title": "RegisterGrpc.cs",
+              "DocumentMoniker": "C:\\Users\\Public\\Projects\\MessengerAvalonia\\GrpcShared\\obj\\Debug\\net10.0\\Protos\\RegisterGrpc.cs",
+              "RelativeDocumentMoniker": "GrpcShared\\obj\\Debug\\net10.0\\Protos\\RegisterGrpc.cs",
+              "ToolTip": "C:\\Users\\Public\\Projects\\MessengerAvalonia\\GrpcShared\\obj\\Debug\\net10.0\\Protos\\RegisterGrpc.cs",
+              "RelativeToolTip": "GrpcShared\\obj\\Debug\\net10.0\\Protos\\RegisterGrpc.cs",
+              "ViewState": "AgIAAIYAAAAAAAAAAAA+wJIAAADGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-17T12:09:46.016Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "MainWindow.axaml.cs",
+              "DocumentMoniker": "C:\\Users\\Public\\Projects\\MessengerAvalonia\\Client\\Views\\MainWindow.axaml.cs",
+              "RelativeDocumentMoniker": "Client\\Views\\MainWindow.axaml.cs",
+              "ToolTip": "C:\\Users\\Public\\Projects\\MessengerAvalonia\\Client\\Views\\MainWindow.axaml.cs",
+              "RelativeToolTip": "Client\\Views\\MainWindow.axaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-17T11:58:27.324Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "IncomingCallWindow.axaml",
+              "DocumentMoniker": "C:\\Users\\Public\\Projects\\MessengerAvalonia\\Client\\Views\\IncomingCallWindow.axaml",
+              "RelativeDocumentMoniker": "Client\\Views\\IncomingCallWindow.axaml",
+              "ToolTip": "C:\\Users\\Public\\Projects\\MessengerAvalonia\\Client\\Views\\IncomingCallWindow.axaml",
+              "RelativeToolTip": "Client\\Views\\IncomingCallWindow.axaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-02-17T10:26:09.491Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "MainWindow.axaml",
+              "DocumentMoniker": "C:\\Users\\Public\\Projects\\MessengerAvalonia\\Client\\Views\\MainWindow.axaml",
+              "RelativeDocumentMoniker": "Client\\Views\\MainWindow.axaml",
+              "ToolTip": "C:\\Users\\Public\\Projects\\MessengerAvalonia\\Client\\Views\\MainWindow.axaml",
+              "RelativeToolTip": "Client\\Views\\MainWindow.axaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-02-17T10:07:16.502Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
               "Title": "RegisterWindow.axaml",
               "DocumentMoniker": "C:\\Users\\Public\\Projects\\MessengerAvalonia\\Client\\Views\\RegisterWindow.axaml",
               "RelativeDocumentMoniker": "Client\\Views\\RegisterWindow.axaml",

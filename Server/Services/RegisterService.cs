@@ -1,5 +1,5 @@
 ﻿using Grpc.Core;
-using MessengerAvalonia.Shared;
+using MessengerAvalonia.Shared.RegisterGrpc;
 
 namespace Server.Services
 {

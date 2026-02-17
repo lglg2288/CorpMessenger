@@ -2,7 +2,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        mc:Ignorable="d" d:DesignWidth="250" d:DesignHeight="450"
         x:Class="Client.RegisterWindow"
         Title="RegisterWindow">
 	<StackPanel Spacing="5">
@@ -15,14 +15,15 @@
 				 PasswordChar="•"
 				 Watermark="Введите пароль"
 				 Padding="8,6"/>
+		<Button x:Name="RegistrationButton"
+				Content="Зарегистрироваться"
+				Padding="20,8"
+				Click="RegistrationButton_Click"/>
 		<Button x:Name="LoginButton"
-                    Content="Зарегистрироваться"
+                    Content="Войти"
                     Padding="20,8"
                     Classes="primary"
 					Click="LoginButton_Click"/>
-		<Button x:Name="CancelButton"
-				Content="Отмена"
-				Padding="20,8"/>
 		<TextBlock x:Name="InformationTextBlock"
 				   Text=""/>
 	</StackPanel>
