@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+option csharp_namespace = "MessengerAvalonia.Shared";
+
+package registration;
+
+service Register {  //Noun + er/Service
+  rpc SignUp (RegisterRequest) returns (RegisterResponse);  // Unary RPC
+  // стриминг: rpc ServerStream (Request) returns (stream Reply);
+}
+
+message RegisterRequest {
+  string login = 1;
+  string password = 2;	
+}
+
+message RegisterResponse {
+  bool Success = 1;
+  string message = 2;
+}
