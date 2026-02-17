@@ -144,8 +144,7 @@ namespace MessengerAvalonia.Shared {
       /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
       /// <param name="cancellationToken">An optional token for canceling the call.</param>
       /// <returns>The call object.</returns>
-      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_pHttpProtocolException: The HTTP/2 server closed the connection. HTTP/2 error code 'HTTP_1_1_REQUIRED' (0xd). (HttpProtocolError)
-lugin", null)]
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_pHttpProtocolException: The HTTP/2 server closed the connection. HTTP/2 error code 'HTTP_1_1_REQUIRED' (0xd). (HttpProtocolError) login", null)]
       public virtual grpc::AsyncUnaryCall<global::MessengerAvalonia.Shared.RegisterResponse> SignUpAsync(global::MessengerAvalonia.Shared.RegisterRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return SignUpAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));

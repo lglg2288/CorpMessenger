@@ -16,10 +16,14 @@ namespace Server.Services
         {
             _logger.LogInformation("Received registration request for username: {Username}", request.Login);
 
+            var db = new DatabaseHelper("Database/DataBase.db");
+
+            RegistrationStatus dbResponse = db.Registration(request.Login, request.Password);
+
             var response = new RegisterResponse
             {
-                Success = true,
-                Message = "Registration successful!"
+                Success = dbResponse.Success,
+                Message = dbResponse.Message
             };
 
             return Task.FromResult(response);
