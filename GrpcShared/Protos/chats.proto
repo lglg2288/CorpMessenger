@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+option csharp_namespace = "MessengerAvalonia.Shared.ChatsGrpc";
+
+package chats;
+
+service ChatsService {
+  rpc GetMessages (GetChatsRequest) returns (GetChatsResponse);
+  rpc SendMessage (AddMessageRequest) returns (AddMessageResponse);
+}
+
+message GetChatsRequest {
+  string userLogin = 1;
+  string friendLogin = 2;
+}
+
+message GetChatsResponse {
+	repeated string message = 1; // массив строк
+	repeated string writer = 2; // массив строк
+}
+	
+message AddMessageRequest {
+  string userLogin = 1;
+  string friendLogin = 2;
+  string text = 3;
+}
+
+message AddMessageResponse {
+  bool success = 1;
+  string message = 2;
+}

@@ -1,5 +1,19 @@
 <Solution>
-  <Project Path="Client/Client.csproj" />
+  <Configurations>
+    <Platform Name="Any CPU" />
+    <Platform Name="ARM64" />
+  </Configurations>
+  <Folder Name="/Apps/">
+    <Project Path="Apps/Client/Client.Android/Client.Android.csproj" Id="123bb2e6-2492-4c2a-ac07-8235eb46b25d">
+      <Deploy />
+    </Project>
+    <Project Path="Apps/Client/Client.Browser/Client.Browser.csproj" Id="6763c8ef-f6ab-427b-a91b-d779c0b07358" />
+    <Project Path="Apps/Client/Client.Desktop/Client.Desktop.csproj" Id="b9c0af6d-9713-4b9a-b901-efce38842741" />
+    <Project Path="Apps/Client/Client.iOS/Client.iOS.csproj" Id="4074286c-309c-4ba6-8be2-fc5b4bb601fc">
+      <Deploy />
+    </Project>
+    <Project Path="Apps/Client/Client/Client.csproj" Id="07bfb8ed-c362-4dfa-b82b-769154b67788" />
+  </Folder>
   <Project Path="GrpcShared/GrpcShared.csproj" />
   <Project Path="Server/Server.csproj" />
 </Solution>

@@ -23,5 +23,15 @@
     "C:\\Users\\Admin\\.nuget\\packages\\sqlitepclraw.lib.e_sqlite3\\2.1.11\\sqlitepclraw.lib.e_sqlite3.2.1.11.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\sqlitepclraw.provider.e_sqlite3\\2.1.11\\sqlitepclraw.provider.e_sqlite3.2.1.11.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1900",
+      "level": "Warning",
+      "message": "Произошла ошибка при получении данных уязвимости пакета: Не удалось загрузить индекс службы для источника https://api.nuget.org/v3/index.json.",
+      "projectPath": "C:\\Users\\Public\\Projects\\MessengerAvalonia\\Server\\Server.csproj",
+      "warningLevel": 1,
+      "filePath": "C:\\Users\\Public\\Projects\\MessengerAvalonia\\Server\\Server.csproj",
+      "targetGraphs": []
+    }
+  ]
 }

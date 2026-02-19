@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+option csharp_namespace = "MessengerAvalonia.Shared.FriendsGrpc";
+
+package friends;
+
+service FriendsService {
+  rpc GetFriends (FriendsRequest) returns (FriendsResponse);
+  rpc AddFriend (AddFriendRequest) returns (AddFriendResponse);
+}
+
+message FriendsRequest {
+  string login = 1;
+}
+
+message FriendsResponse {
+	repeated string friends = 1; // массив строк
+}
+	
+message AddFriendRequest {
+  string userLogin = 1;
+  string friendLogin = 2;
+}
+
+message AddFriendResponse {
+  bool success = 1;
+  string message = 2;
+}

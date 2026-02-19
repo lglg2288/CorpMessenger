@@ -8,9 +8,6 @@
 using grpc = global::Grpc.Core;
 
 namespace MessengerAvalonia.Shared.RegisterGrpc {
-  /// <summary>
-  ///Noun + er/Service
-  /// </summary>
   public static partial class Register
   {
     static readonly string __ServiceName = "registration.Register";
@@ -72,7 +69,7 @@ namespace MessengerAvalonia.Shared.RegisterGrpc {
     public abstract partial class RegisterBase
     {
       /// <summary>
-      /// Unary RPC
+      /// стриминг: rpc ServerStream (Request) returns (stream Reply);
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
@@ -113,7 +110,7 @@ namespace MessengerAvalonia.Shared.RegisterGrpc {
       }
 
       /// <summary>
-      /// Unary RPC
+      /// стриминг: rpc ServerStream (Request) returns (stream Reply);
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -126,7 +123,7 @@ namespace MessengerAvalonia.Shared.RegisterGrpc {
         return SignUp(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// Unary RPC
+      /// стриминг: rpc ServerStream (Request) returns (stream Reply);
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -137,7 +134,7 @@ namespace MessengerAvalonia.Shared.RegisterGrpc {
         return CallInvoker.BlockingUnaryCall(__Method_SignUp, null, options, request);
       }
       /// <summary>
-      /// Unary RPC
+      /// стриминг: rpc ServerStream (Request) returns (stream Reply);
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -150,7 +147,7 @@ namespace MessengerAvalonia.Shared.RegisterGrpc {
         return SignUpAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// Unary RPC
+      /// стриминг: rpc ServerStream (Request) returns (stream Reply);
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>

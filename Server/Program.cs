@@ -15,4 +15,6 @@ builder.WebHost.ConfigureKestrel(options =>
 var app = builder.Build();
 app.MapGrpcService<RegisterService>();
 app.MapGrpcService<LoginService>();
+app.MapGrpcService<FriendService>();
+app.MapGrpcService<ChatService>();
 app.Run();

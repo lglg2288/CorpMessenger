@@ -4,8 +4,8 @@ option csharp_namespace = "MessengerAvalonia.Shared.RegisterGrpc";
 
 package registration;
 
-service Register {  //Noun + er/Service
-  rpc SignUp (RegisterRequest) returns (RegisterResponse);  // Unary RPC
+service Register {
+  rpc SignUp (RegisterRequest) returns (RegisterResponse);
   // стриминг: rpc ServerStream (Request) returns (stream Reply);
 }
 

@@ -1,0 +1,2 @@
+obj\Debug\net10.0\Protos/Chats.cs \
+obj\Debug\net10.0\Protos/ChatsGrpc.cs: Protos/chats.proto

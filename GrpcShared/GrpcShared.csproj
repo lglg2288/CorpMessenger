@@ -16,9 +16,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Protos\" />
     <Protobuf Include="Protos\register.proto" GrpcServices="Both" />
-    <Protobuf Include="Protos\login.proto" GrpcServices="Both" />
+	  <Protobuf Include="Protos\login.proto" GrpcServices="Both" />
+	  <Protobuf Include="Protos\friends.proto" GrpcServices="Both" />
+	  <Protobuf Include="Protos\chats.proto" GrpcServices="Both" />
   </ItemGroup>
 
 </Project>
