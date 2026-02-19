@@ -14,7 +14,8 @@ FROM mcr.microsoft.com/dotnet/aspnet:10.0 AS final
 WORKDIR /app
 COPY --from=build /app/publish .
 
-EXPOSE 5203
-ENV ASPNETCORE_URLS=http://+:5203
+RUN mkdir -p /app/Database /app/certs
+
+EXPOSE 5203 5204
 
 ENTRYPOINT ["dotnet", "Server.dll"]

@@ -4,3 +4,4 @@ GrpcShared/obj/
 .vs/
 Server/bin/
 Server/obj/
+.env

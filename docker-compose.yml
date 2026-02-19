@@ -7,9 +7,15 @@ services:
     container_name: server-CorpMessenger
     restart: unless-stopped
     ports:
-        - "5203:5203"
+      - "5203:5203"
+      - "5204:5204"
     volumes:
       # Пробрасываем папку с базой данных с хоста в контейнер
       - ./Server/Database:/app/Database
+      - /root/cert/yourdomain.ru/server.pfx:/app/certs/server.pfx:ro
+    environment:
+      - ASPNETCORE_URLS=https://+:5204;http://+:5203
+      - ASPNETCORE_Kestrel__Certificates__Default__Path=/app/certs/server.pfx
+      - ASPNETCORE_Kestrel__Certificates__Default__Password=YourSecurePassword
 networks:
   default:
