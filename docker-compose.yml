@@ -1,0 +1,15 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: ./Server/Dockerfile
+    
+    container_name: server-CorpMessenger
+    restart: unless-stopped
+    ports:
+        - "5203:5203"
+    volumes:
+      # Пробрасываем папку с базой данных с хоста в контейнер
+      - ./Server/Database:/app/Database
+networks:
+  default:

@@ -1,6 +1,6 @@
 Apps/
 GrpcShared/bin/
 GrpcShared/obj/
-
+.vs/
 Server/bin/
 Server/obj/

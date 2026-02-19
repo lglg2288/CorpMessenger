@@ -1,2 +1,0 @@
-obj\Debug\net10.0\Protos/Friends.cs \
-obj\Debug\net10.0\Protos/FriendsGrpc.cs: Protos/friends.proto
