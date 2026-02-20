@@ -1,0 +1,99 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="300" d:DesignHeight="500"
+        Width="300" Height="500"
+        x:Class="Client.ChatWindow"
+        Title="ChatWindow">
+  <Grid RowDefinitions="Auto,*,Auto">
+        <Border Background="#2B2B2B"
+                Padding="15"
+                Grid.Row="0">
+            <TextBlock x:Name="ChatTitleTextBlock"
+                       Text="Название чата"
+                       FontSize="18"
+                       FontWeight="Bold"
+                       Foreground="White"/>
+        </Border>
+
+        <!-- Область сообщений -->
+        <ScrollViewer Grid.Row="1"
+                      Background="#1E1E1E">
+            <StackPanel Name="MessagesStackPanel"
+                        Margin="10"
+                        Spacing="10">
+                <!-- Пример сообщения от пользователя -->
+                <Border Background="#2D2D2D"
+                        CornerRadius="8"
+                        Padding="10"
+                        HorizontalAlignment="Left"
+                        MaxWidth="500">
+                    <StackPanel>
+                        <TextBlock Text="Вы"
+                                   FontWeight="Bold"
+                                   Foreground="#4A9EFF"/>
+                        <TextBlock Text="Привет! Как дела?"
+                                   Foreground="White"
+                                   TextWrapping="Wrap"/>
+                        <TextBlock Text="12:34"
+                                   FontSize="11"
+                                   Foreground="#808080"
+                                   HorizontalAlignment="Right"/>
+                    </StackPanel>
+                </Border>
+
+                <!-- Пример ответа собеседника -->
+                <Border Background="#3D3D3D"
+                        CornerRadius="8"
+                        Padding="10"
+                        HorizontalAlignment="Right"
+                        MaxWidth="500">
+                    <StackPanel>
+                        <TextBlock Text="Анна"
+                                   FontWeight="Bold"
+                                   Foreground="#FF6B6B"/>
+                        <TextBlock Text="Привет! Всё отлично, спасибо! А у тебя?"
+                                   Foreground="White"
+                                   TextWrapping="Wrap"/>
+                        <TextBlock Text="12:35"
+                                   FontSize="11"
+                                   Foreground="#808080"
+                                   HorizontalAlignment="Right"/>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+        </ScrollViewer>
+
+        <!-- Панель ввода сообщения -->
+        <Border Grid.Row="2"
+                Background="#2B2B2B"
+                Padding="10">
+            <Grid ColumnDefinitions="*,Auto"
+                  Margin="5">
+                <!-- Поле ввода текста -->
+                <TextBox Name="MessageTextBox"
+                         Grid.Column="0"
+                         Watermark="Введите сообщение..."
+                         Background="#3D3D3D"
+                         Foreground="White"
+                         BorderThickness="0"
+                         CornerRadius="20"
+                         Padding="10,8"
+                         Margin="0,0,10,0"/>
+                
+                <!-- Кнопка отправки -->
+                <Button Name="SendButton"
+                        Grid.Column="1"
+                        Content="Отправить"
+                        Background="#4A9EFF"
+                        Foreground="White"
+                        BorderThickness="0"
+                        CornerRadius="20"
+                        Padding="15,8"
+                        FontWeight="Bold"
+                        Click="SendButton_Click"/>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>
