@@ -5,11 +5,12 @@ using Grpc.Net.Client;
 using Grpc.Net.Client;
 using MessengerAvalonia.Shared.LoginGrpc;
 using MessengerAvalonia.Shared.RegisterGrpc;
+using Microsoft.Extensions.Logging;
 using Microsoft.VisualBasic;
 using System;
 using System.Net.Http;
 using System.Reflection;
-
+using Microsoft.Extensions.Logging;
 namespace Client;
 
 public partial class RegisterWindow : Window
@@ -21,12 +22,9 @@ public partial class RegisterWindow : Window
 
     private void LoginButton_Click(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
     {
-        var channel = GrpcChannel.ForAddress("http://neogus.ru:5203", new GrpcChannelOptions
+        var channel = GrpcChannel.ForAddress("https://neogus.ru:5204", new GrpcChannelOptions
         {
-            HttpHandler = new SocketsHttpHandler
-            {
-                EnableMultipleHttp2Connections = true
-            }
+            HttpHandler = new HttpClientHandler()
         });
         var client = new Loginer.LoginerClient(channel);
 
@@ -43,7 +41,7 @@ public partial class RegisterWindow : Window
 
     private void RegistrationButton_Click(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
     {
-        var channel = GrpcChannel.ForAddress("http://localhost:5203", new GrpcChannelOptions
+        var channel = GrpcChannel.ForAddress("https://neogus.ru:5204", new GrpcChannelOptions
         {
             HttpHandler = new SocketsHttpHandler
             {

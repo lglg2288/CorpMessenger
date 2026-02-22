@@ -1,13 +1,14 @@
 using Avalonia;
 using Avalonia.Controls;
+using Avalonia.Layout;
 using Avalonia.Markup.Xaml;
 using Avalonia.Media;
-using Avalonia.Layout;
+using Avalonia.Threading;
 using Grpc.Net.Client;
 using MessengerAvalonia.Shared.ChatsGrpc;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Net.Http;
-using Avalonia.Threading;
 using System.Timers;
 
 namespace Client;
@@ -50,12 +51,26 @@ public partial class ChatWindow : Window
         ChatTitleTextBlock.Text = $"Чат с {Models.CurrentChat.friendLogin}";
 
 
-        var channel = GrpcChannel.ForAddress("http://localhost:5203", new GrpcChannelOptions
+        var httpHandler = new HttpClientHandler
         {
-            HttpHandler = new SocketsHttpHandler
+            ServerCertificateCustomValidationCallback = (message, cert, chain, errors) =>
             {
-                EnableMultipleHttp2Connections = true
-            }
+                // Полностью игнорируем все ошибки сертификата (для теста!)
+                return true;
+            },
+            SslProtocols = System.Security.Authentication.SslProtocols.Tls12 | System.Security.Authentication.SslProtocols.Tls13,
+            AutomaticDecompression = System.Net.DecompressionMethods.All
+        };
+
+        // Создаём LoggerFactory
+        var loggerFactory = LoggerFactory.Create(builder => builder.AddConsole().SetMinimumLevel(LogLevel.Debug));
+
+        var channel = GrpcChannel.ForAddress("https://neogus.ru:5204", new GrpcChannelOptions
+        {
+            HttpHandler = httpHandler,
+            MaxReceiveMessageSize = 5 * 1024 * 1024,
+            MaxSendMessageSize = 5 * 1024 * 1024,
+            LoggerFactory = loggerFactory // Передаём LoggerFactory через GrpcChannelOptions
         });
         var client = new ChatsService.ChatsServiceClient(channel);
         var reply = client.GetMessages(
@@ -86,12 +101,26 @@ public partial class ChatWindow : Window
 
     private void SendButton_Click(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
     {
-        var channel = GrpcChannel.ForAddress("http://localhost:5203", new GrpcChannelOptions
+        var httpHandler = new HttpClientHandler
         {
-            HttpHandler = new SocketsHttpHandler
+            ServerCertificateCustomValidationCallback = (message, cert, chain, errors) =>
             {
-                EnableMultipleHttp2Connections = true
-            }
+                // Полностью игнорируем все ошибки сертификата (для теста!)
+                return true;
+            },
+            SslProtocols = System.Security.Authentication.SslProtocols.Tls12 | System.Security.Authentication.SslProtocols.Tls13,
+            AutomaticDecompression = System.Net.DecompressionMethods.All
+        };
+
+        // Создаём LoggerFactory
+        var loggerFactory = LoggerFactory.Create(builder => builder.AddConsole().SetMinimumLevel(LogLevel.Debug));
+
+        var channel = GrpcChannel.ForAddress("https://neogus.ru:5204", new GrpcChannelOptions
+        {
+            HttpHandler = httpHandler,
+            MaxReceiveMessageSize = 5 * 1024 * 1024,
+            MaxSendMessageSize = 5 * 1024 * 1024,
+            LoggerFactory = loggerFactory // Передаём LoggerFactory через GrpcChannelOptions
         });
         var client = new ChatsService.ChatsServiceClient(channel);
         var reply = client.SendMessage(

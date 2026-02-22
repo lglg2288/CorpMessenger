@@ -1,11 +1,12 @@
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
+using Avalonia.Threading;
 using Grpc.Net.Client;
 using MessengerAvalonia.Shared.FriendsGrpc;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Net.Http;
-using Avalonia.Threading;
 using System.Timers;
 
 namespace Client;
@@ -48,7 +49,7 @@ public partial class ChatsWindow : Window
 
     private void AddFriendButton_Click(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
     {
-        var channel = GrpcChannel.ForAddress("http://localhost:5203", new GrpcChannelOptions
+        var channel = GrpcChannel.ForAddress("https://neogus.ru:5204", new GrpcChannelOptions
         {
             HttpHandler = new SocketsHttpHandler
             {
@@ -69,12 +70,26 @@ public partial class ChatsWindow : Window
 
     private void LoadFriends()
     {
-        var channel = GrpcChannel.ForAddress("http://localhost:5203", new GrpcChannelOptions
+        var httpHandler = new HttpClientHandler
         {
-            HttpHandler = new SocketsHttpHandler
+            ServerCertificateCustomValidationCallback = (message, cert, chain, errors) =>
             {
-                EnableMultipleHttp2Connections = true
-            }
+                // Полностью игнорируем все ошибки сертификата (для теста!)
+                return true;
+            },
+            SslProtocols = System.Security.Authentication.SslProtocols.Tls12 | System.Security.Authentication.SslProtocols.Tls13,
+            AutomaticDecompression = System.Net.DecompressionMethods.All
+        };
+
+        // Создаём LoggerFactory
+        var loggerFactory = LoggerFactory.Create(builder => builder.AddConsole().SetMinimumLevel(LogLevel.Debug));
+
+        var channel = GrpcChannel.ForAddress("https://neogus.ru:5204", new GrpcChannelOptions
+        {
+            HttpHandler = httpHandler,
+            MaxReceiveMessageSize = 5 * 1024 * 1024,
+            MaxSendMessageSize = 5 * 1024 * 1024,
+            LoggerFactory = loggerFactory // Передаём LoggerFactory через GrpcChannelOptions
         });
         var client = new FriendsService.FriendsServiceClient(channel);
         var reply = client.GetFriends(new FriendsRequest { Login = Models.UserSelf.login });
