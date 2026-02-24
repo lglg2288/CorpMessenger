@@ -3,7 +3,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:vm="using:Client.ViewModels"
-             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             mc:Ignorable="d" d:DesignWidth="450" d:DesignHeight="800"
              x:Class="Client.Views.MainView"
              x:DataType="vm:MainViewModel">
   <Design.DataContext>
@@ -12,5 +12,18 @@
     <vm:MainViewModel />
   </Design.DataContext>
 
-  <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+  <Grid RowDefinitions="*,Auto">
+        <!-- Здесь может быть AppBar, боковое меню и т.п. -->
+
+        <ContentControl Grid.Row="0"
+                          Content="{Binding CurrentView}"
+                          HorizontalContentAlignment="Stretch"
+                          VerticalContentAlignment="Stretch" />
+
+        <!-- Пример нижней панели навигации (опционально) -->
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Content="На главную" Command="{Binding GoToHomeCommand}" />
+            <Button Content="Регистрация" Command="{Binding GoToRegisterCommand}" />
+        </StackPanel>
+    </Grid>
 </UserControl>

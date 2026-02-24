@@ -1,14 +1,11 @@
 using Avalonia.Controls;
-using System.Threading.Tasks;
 
-namespace Client.Views
+namespace Client.Views;
+
+public partial class MainView : UserControl
 {
-    public partial class MainView : UserControl
+    public MainView()
     {
-        public MainView()
-        {
-            InitializeComponent();
-            new RegisterWindow().Show();
-        }
+        InitializeComponent();
     }
 }

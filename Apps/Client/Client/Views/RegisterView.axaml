@@ -1,0 +1,36 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="using:Client.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="350" d:DesignHeight="800"
+             x:Class="Client.Views.RegisterView"
+			 x:DataType="vm:RegisterViewModel">
+
+		<ScrollViewer>
+			<StackPanel Spacing="12">
+				<TextBlock Text="Добро пожаловать в ..." Margin="0,20,0,10"/>
+				<TextBlock Text="Логин:"/>
+				<TextBox x:Name="LoginTextBox"
+						 Text="{Binding Login}"
+						 Watermark="Введите логин"
+						 Padding="8,6"/>
+				<TextBlock Text="Пароль:"/>
+				<TextBox x:Name="PasswordTextBox"
+						 Text="{Binding Password}"
+						 PasswordChar="•"
+						 Watermark="Введите пароль"
+						 Padding="8,6"/>
+				<Button x:Name="RegistrationButton"
+							Content="Зарегистрироваться"
+							Padding="20,8"/>
+				<Button x:Name="LoginButton"
+							Content="Войти"
+							Padding="20,8"
+							Classes="primary"
+							Command="{Binding LoginCommand}"/>
+				<TextBlock x:Name="InformationTextBlock"
+						   Text="{Binding ErrorMessage}"/>
+			</StackPanel>
+		</ScrollViewer>
+</UserControl>
