@@ -1,0 +1,47 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             x:Class="Client.Views.ChatsView"
+             xmlns:vm="using:Client.ViewModels"
+             x:DataType="vm:ChatsViewModel"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             >
+  
+    <StackPanel>
+      <TextBlock x:Name="ChatsTitle"
+                 Text="{Binding StatusMessage}"
+                 FontSize="20"
+                 Margin="0,0,0,10"/>
+	  <StackPanel Orientation="Horizontal" Spacing="5">
+          <TextBox x:Name="FriendsLoginTextBox"
+                   Watermark="Введите логин друга"
+                   Padding="8,6"
+                   Text="{Binding FriendsLogin}"/>
+          <Button x:Name="AddFriendButton"
+                  Content="Добавить"
+                  Padding="20,8"
+                  Command="{Binding ClickAddFriendCommand}"/>
+    </StackPanel>
+      
+        <ScrollViewer>
+            <ItemsControl ItemsSource="{Binding Friends}">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel Spacing="8"/>  <!-- вертикальный стек, как было -->
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Button Content="{Binding}"
+                                HorizontalAlignment="Stretch"
+                                HorizontalContentAlignment="Left"
+                                Command="{Binding $parent[UserControl].DataContext.OpenChatCommand}"
+                                CommandParameter="{Binding}"/>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </ScrollViewer>
+  </StackPanel>
+</UserControl>

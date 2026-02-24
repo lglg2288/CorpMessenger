@@ -23,7 +23,8 @@
 						 Padding="8,6"/>
 				<Button x:Name="RegistrationButton"
 							Content="Зарегистрироваться"
-							Padding="20,8"/>
+							Padding="20,8"
+							Command="{Binding RegisterCommand}"/>
 				<Button x:Name="LoginButton"
 							Content="Войти"
 							Padding="20,8"

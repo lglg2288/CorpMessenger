@@ -19,11 +19,5 @@
                           Content="{Binding CurrentView}"
                           HorizontalContentAlignment="Stretch"
                           VerticalContentAlignment="Stretch" />
-
-        <!-- Пример нижней панели навигации (опционально) -->
-        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
-            <Button Content="На главную" Command="{Binding GoToHomeCommand}" />
-            <Button Content="Регистрация" Command="{Binding GoToRegisterCommand}" />
-        </StackPanel>
     </Grid>
 </UserControl>

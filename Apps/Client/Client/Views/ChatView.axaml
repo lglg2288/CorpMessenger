@@ -1,0 +1,112 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             xmlns:vm="using:Client.ViewModels"
+             x:Class="Client.Views.ChatView"
+             x:DataType="vm:ChatViewModel">
+  
+    <Grid RowDefinitions="Auto,*,Auto">
+        <Border Background="#2B2B2B"
+                Padding="15"
+                Grid.Row="0">
+            <StackPanel Orientation="Horizontal" Spacing="12">
+				<Button  x:Name="BackButton"
+                         Content="↩"
+                         Background="#4A9EFF"
+                         Foreground="White"
+                         BorderThickness="0"
+                         CornerRadius="20"
+                         Padding="15,8"
+                         FontWeight="Bold"
+                         Command="{Binding BackToChatsListCommand}"/>
+                <TextBlock x:Name="ChatTitleTextBlock"
+                           VerticalAlignment="Center"
+                           Text="Название чата"
+                           FontSize="18"
+                           FontWeight="Bold"
+                           Foreground="White"/>
+            </StackPanel>
+        </Border>
+
+        <!-- Область сообщений -->
+        <ScrollViewer Grid.Row="1"
+              Background="#1E1E1E"
+              VerticalScrollBarVisibility="Auto"
+              HorizontalScrollBarVisibility="Disabled">
+
+    <ItemsControl ItemsSource="{Binding Messages}"
+                  Margin="10">
+
+        <ItemsControl.ItemsPanel>
+            <ItemsPanelTemplate>
+                <StackPanel Spacing="10"/>
+            </ItemsPanelTemplate>
+        </ItemsControl.ItemsPanel>
+
+        <ItemsControl.ItemTemplate>
+            <DataTemplate DataType="vm:MessageItem">  <!-- vm = using:твой.namespace.ViewModels -->
+
+                <Border Background="{Binding IsMyMessage, Converter={StaticResource MessageBackgroundConverter}}"
+                        CornerRadius="8"
+                        Padding="10"
+                        MaxWidth="500"
+                        HorizontalAlignment="{Binding IsMyMessage, Converter={StaticResource MessageAlignmentConverter}}">
+
+                    <StackPanel>
+                        <TextBlock Text="{Binding Sender}"
+                                   FontWeight="Bold"
+                                   Foreground="{Binding IsMyMessage, Converter={StaticResource MessageSenderColorConverter}}"/>
+
+                        <TextBlock Text="{Binding Text}"
+                                   Foreground="White"
+                                   TextWrapping="Wrap"/>
+
+                        <TextBlock Text="{Binding Timestamp, StringFormat='HH:mm'}"
+                                   FontSize="11"
+                                   Foreground="#808080"
+                                   HorizontalAlignment="Right"/>
+                    </StackPanel>
+
+                </Border>
+
+            </DataTemplate>
+        </ItemsControl.ItemTemplate>
+
+    </ItemsControl>
+</ScrollViewer>
+
+        <!-- Панель ввода сообщения -->
+        <Border Grid.Row="2"
+                Background="#2B2B2B"
+                Padding="10">
+            <Grid ColumnDefinitions="*,Auto"
+                  Margin="5">
+                <!-- Поле ввода текста -->
+                <TextBox Name="MessageTextBox"
+                         Grid.Column="0"
+                         Watermark="Введите сообщение..."
+                         Background="#3D3D3D"
+                         Foreground="White"
+                         BorderThickness="0"
+                         CornerRadius="20"
+                         Padding="10,8"
+                         Margin="0,0,10,0"
+                         Text="{Binding MessageInput}"/>
+                
+                <!-- Кнопка отправки -->
+                <Button Name="SendButton"
+                        Grid.Column="1"
+                        Content="Отправить"
+                        Background="#4A9EFF"
+                        Foreground="White"
+                        BorderThickness="0"
+                        CornerRadius="20"
+                        Padding="15,8"
+                        FontWeight="Bold"
+                        Command="{Binding SendMessageAsyncCommand}"/>
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>
