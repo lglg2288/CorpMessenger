@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Timers;
 using Avalonia.Threading;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace Client.ViewModels
 {
@@ -18,8 +19,11 @@ namespace Client.ViewModels
         private readonly MainViewModel _parent;
         private readonly IFriendService _friendService;
         private Timer _updateTimer;
-        public ChatsViewModel(MainViewModel parent, IFriendService chatsService)
+        private readonly IServiceProvider _services;
+
+        public ChatsViewModel(IServiceProvider services, MainViewModel parent, IFriendService chatsService)
         {
+            _services = services;
             _parent = parent;
             _friendService = chatsService;
             LoadFriendsAsync();
@@ -83,7 +87,9 @@ namespace Client.ViewModels
         private void OpenChat(string friendLogin)
         {
             Models.CurrentChat.friendLogin = friendLogin;
-            _parent.CurrentView = new ChatViewModel(_parent, new Interprice.GrpcChatsService(Models.CurrentGrpcChannel.channel));
+            var vm = ActivatorUtilities.CreateInstance<ChatViewModel>(_services, _parent);
+            _parent.CurrentView = null;
+            _parent.CurrentView = vm;
         }
 
         private void StartAutoUpdate()

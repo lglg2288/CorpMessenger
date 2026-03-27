@@ -1,7 +1,11 @@
 ﻿using Android.App;
 using Android.Content.PM;
+using Android.OS;
 using Avalonia;
 using Avalonia.Android;
+using Client.Android.Services;
+using Microsoft.Extensions.DependencyInjection;
+using Client.Services;
 
 namespace Client.Android;
 
@@ -17,5 +21,16 @@ public class MainActivity : AvaloniaMainActivity<App>
     {
         return base.CustomizeAppBuilder(builder)
             .WithInterFont();
+    }
+
+    protected override void OnCreate(Bundle? savedInstanceState)
+    {
+        var service = new ServiceCollection()
+            .AddAppServices()
+            .AddAndroidServices();
+        
+        App.services = service.BuildServiceProvider();
+
+        base.OnCreate(savedInstanceState);
     }
 }

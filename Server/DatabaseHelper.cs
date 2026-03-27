@@ -2,6 +2,7 @@
 using Microsoft.Data.Sqlite;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
+
 namespace Server
 {
     public class DatabaseHelper
@@ -205,7 +206,7 @@ namespace Server
         }
 
 
-        private long? GetUserId(string login)
+        public long? GetUserId(string login)
         {
             string query = "SELECT ID FROM Users WHERE login = @Login;";
             using var cmd = new SqliteCommand(query, _dbConnection);
@@ -215,7 +216,16 @@ namespace Server
             return result == null ? null : Convert.ToInt64(result);
         }
 
-        private int? GetUserId(string login, SqliteTransaction transaction)
+        public string? GetLoginById(int userId)
+        {
+            string query = "SELECT login FROM Users WHERE ID = @UserId;";
+            using var cmd = new SqliteCommand(query, _dbConnection);
+            cmd.Parameters.AddWithValue("@UserId", userId);
+            var result = cmd.ExecuteScalar();
+            return result == null ? null : result.ToString();
+        }
+
+        public int? GetUserId(string login, SqliteTransaction transaction)
         {
             string query = "SELECT ID FROM Users WHERE login = @Login;";
             using var cmd = new SqliteCommand(query, _dbConnection, transaction);

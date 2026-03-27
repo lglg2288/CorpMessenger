@@ -10,16 +10,17 @@
     <PackageReference Include="Google.Protobuf" Version="3.33.5" />
     <PackageReference Include="Grpc.Core" Version="2.46.6" />
     <PackageReference Include="Grpc.Tools" Version="2.78.0">
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-      <PrivateAssets>all</PrivateAssets>
+    <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    <PrivateAssets>all</PrivateAssets>
     </PackageReference>
   </ItemGroup>
 
   <ItemGroup>
-    <Protobuf Include="Protos\register.proto" GrpcServices="Both" />
+      <Protobuf Include="Protos\register.proto" GrpcServices="Both" />
 	  <Protobuf Include="Protos\login.proto" GrpcServices="Both" />
 	  <Protobuf Include="Protos\friends.proto" GrpcServices="Both" />
 	  <Protobuf Include="Protos\chats.proto" GrpcServices="Both" />
+	  <Protobuf Include="Protos\calls.proto" GrpcServices="Both" />
   </ItemGroup>
 
 </Project>

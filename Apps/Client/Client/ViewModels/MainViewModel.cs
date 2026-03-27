@@ -12,26 +12,28 @@ namespace Client.ViewModels;
 
 public partial class MainViewModel : ViewModelBase
 {
+    private readonly IServiceProvider _services;
+
     [ObservableProperty]
     private string _greeting = "Welcome to Avalonia!";
     [ObservableProperty]
     private object? currentView;
 
-    public MainViewModel()
+    public MainViewModel(IServiceProvider services)
     {
-        CurrentView = null;        
-        CurrentView = new RegisterViewModel(this,
+        _services = services;
+        CurrentView = null;
+        CurrentView = new RegisterViewModel(_services, this,
             new Interprice.GrpcLoginService(CurrentGrpcChannel.channel),
             new Interprice.GrpcRegisterService(Models.CurrentGrpcChannel.channel));
+        
     }
 
     [RelayCommand]
     private void GoToRegister()
     {
-        CurrentView = null;
-        CurrentView = new RegisterViewModel( this,
-            new Interprice.GrpcLoginService(CurrentGrpcChannel.channel),
-            new Interprice.GrpcRegisterService(Models.CurrentGrpcChannel.channel));
+        var vm = ActivatorUtilities.CreateInstance<RegisterViewModel>(_services);
+        CurrentView = vm;
     }
 
     [RelayCommand]

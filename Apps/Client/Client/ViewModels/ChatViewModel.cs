@@ -1,10 +1,14 @@
 ﻿using Avalonia.Threading;
+using Client.Interprice;
 using Client.Models;
 using Client.Services;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using Google.Protobuf;
+using Grpc.Core;
+using Grpc.Net.Client;
 using MessengerAvalonia.Shared.FriendsGrpc;
+using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -18,18 +22,26 @@ namespace Client.ViewModels
     {
         private readonly MainViewModel _parent;
         private readonly IChatsService _chatsService;
+        private readonly IServiceProvider _services;
+        private ICallService _callService;
+        private readonly IAudioPlayerService _audioPlayer;
         private Timer _updateTimer;
         [ObservableProperty]
         private ObservableCollection<MessageItem> messages = new();
         [ObservableProperty]
         private string? messageInput;
+        [ObservableProperty]
+        private string? chatname = CurrentChat.friendLogin;
 
-        public ChatViewModel(MainViewModel parent, IChatsService chatsService)
+        public ChatViewModel(IServiceProvider services, MainViewModel parent, IChatsService chatsService, ICallService callService, IAudioPlayerService audioPlayer)
         {
+            _services = services;
             _parent = parent;
             _chatsService = chatsService;
+            _callService = callService;
             LoadMessagesAsync();
             StartAutoUpdate();
+            _audioPlayer = audioPlayer;
         }
 
         public void AddMessage(string sender, string text)
@@ -78,6 +90,27 @@ namespace Client.ViewModels
         }
 
         [RelayCommand]
+        private async void Call()
+        {
+            try
+            {
+                _audioPlayer.Start();
+                _callService.onAudioChunkReceived += async (byte[] bytes) =>
+                {
+                    chatname = bytes.Length.ToString();
+                    _audioPlayer.PlayChunk(bytes);
+                };
+                await _callService.StartCallAsync(Models.UserSelf.login, Models.CurrentChat.friendLogin);
+
+            }
+            catch (Exception ex)
+            {
+                
+            }
+            return;
+        }
+
+        [RelayCommand]
         private async void SendMessageAsync()
         {
             try
@@ -102,8 +135,8 @@ namespace Client.ViewModels
         [RelayCommand]
         private void BackToChatsList()
         {
-            _parent.CurrentView = new ChatsViewModel(_parent,
-                        new Interprice.GrpcFriendService(Models.CurrentGrpcChannel.channel)); ;
+            var vm = ActivatorUtilities.CreateInstance<ChatsViewModel>(_services, _parent);
+            _parent.CurrentView = vm;
         }
     }
     public class MessageItem

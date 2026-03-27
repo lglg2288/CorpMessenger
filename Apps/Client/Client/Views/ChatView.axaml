@@ -23,10 +23,17 @@
                          Command="{Binding BackToChatsListCommand}"/>
                 <TextBlock x:Name="ChatTitleTextBlock"
                            VerticalAlignment="Center"
-                           Text="Название чата"
+                           Text="{Binding Chatname}"
                            FontSize="18"
                            FontWeight="Bold"
                            Foreground="White"/>
+                <Button x:Name="Call" Content="📞"
+                        Background="#4A9EFF"
+                        Foreground="White"
+                        BorderThickness="0"
+                        CornerRadius="20"
+                        Padding="15,8"
+                        Command="{Binding CallCommand}"/>
             </StackPanel>
         </Border>
 

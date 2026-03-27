@@ -1,5 +1,8 @@
-﻿using System;
-using Avalonia;
+﻿using Avalonia;
+using Client.Desktop.Services;
+using Client.Services;
+using Microsoft.Extensions.DependencyInjection;
+using System;
 
 namespace Client.Desktop;
 
@@ -14,8 +17,18 @@ sealed class Program
 
     // Avalonia configuration, don't remove; also used by visual designer.
     public static AppBuilder BuildAvaloniaApp()
-        => AppBuilder.Configure<App>()
+    {
+        var services = new ServiceCollection();
+
+        services.AddAppServices()
+                .AddDesktopServices();
+
+        var provider = services.BuildServiceProvider();
+        App.services = provider;
+
+        return AppBuilder.Configure<App>()
             .UsePlatformDetect()
             .WithInterFont()
             .LogToTrace();
+    }
 }

@@ -10,12 +10,14 @@ using Client.Views;
 using Grpc.Net.Client;
 using Microsoft.Extensions.DependencyInjection;
 using System.Linq;
+using System;
 using System.Net.Http;
 
 namespace Client;
 
 public partial class App : Application
 {
+    public static IServiceProvider? services { get; set; }
     public override void Initialize()
     {
         AvaloniaXamlLoader.Load(this);
@@ -23,15 +25,6 @@ public partial class App : Application
 
     public override void OnFrameworkInitializationCompleted()
     {
-        var services = new ServiceCollection();
-        const string serverAddress = "https://neogus.ru:5204";
-        services.AddSingleton(sp => GrpcChannel.ForAddress(serverAddress, new GrpcChannelOptions
-        {
-            HttpHandler = new HttpClientHandler()
-        }));
-        
-        services.AddSingleton<ILoginService, GrpcLoginService>();
-
         ////////////////////////////////////////////////////////////////////////////////////////////
         if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
         {
@@ -40,14 +33,14 @@ public partial class App : Application
             DisableAvaloniaDataAnnotationValidation();
             desktop.MainWindow = new MainWindow
             {
-                DataContext = new MainViewModel()
+                DataContext = services.GetRequiredService<MainViewModel>()
             };
         }
         else if (ApplicationLifetime is ISingleViewApplicationLifetime singleViewPlatform)
         {
             singleViewPlatform.MainView = new MainView
             {
-                DataContext = new MainViewModel()
+                DataContext = services.GetRequiredService<MainViewModel>()
             };
         }
 

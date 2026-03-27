@@ -2,6 +2,7 @@
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using MessengerAvalonia.Shared.ChatsGrpc;
+using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.Net.NetworkInformation;
@@ -15,8 +16,10 @@ namespace Client.ViewModels
         private readonly MainViewModel _parent;
         private readonly ILoginService _loginService;
         private readonly IRegisterService _registerService;
-        public RegisterViewModel(MainViewModel parent, ILoginService loginService, IRegisterService registerService)
+        private readonly IServiceProvider _services;
+        public RegisterViewModel(IServiceProvider services, MainViewModel parent, ILoginService loginService, IRegisterService registerService)
         {
+            _services = services;
             _parent = parent;
             _loginService = loginService;
             _registerService = registerService;
@@ -40,8 +43,8 @@ namespace Client.ViewModels
                 {
                     Client.Models.UserSelf.login = Login;
                     Client.Models.UserSelf.password = Password;
-                    _parent.CurrentView = new ChatsViewModel(_parent,
-                        new Interprice.GrpcFriendService(Models.CurrentGrpcChannel.channel));
+                    var vm = ActivatorUtilities.CreateInstance<ChatsViewModel>(_services, _parent);
+                    _parent.CurrentView = vm;
                 }
                 else
                 {

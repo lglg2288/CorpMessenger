@@ -1,0 +1,30 @@
+﻿syntax = "proto3";
+
+option csharp_namespace = "MessengerAvalonia.Shared.CallsGrpc";
+
+package calls;
+
+service AudioService {
+  // Один bidirectional стрим на звонок
+  // Клиент шлёт JoinRequest первым сообщением, потом только AudioChunk
+  rpc AudioCall(stream CallMessage) returns (stream AudioChunk);
+}
+
+message CallMessage {
+  oneof payload {
+    JoinInfo join = 1;          // только первое сообщение
+    AudioChunk audio = 2;       // все последующие
+  }
+}
+
+message JoinInfo {
+  string my_login     = 1;
+  string target_login = 2;      // друг, которому звоним / к кому присоединяемся
+  // можно добавить token, device_id и т.п. если нужно
+}
+
+message AudioChunk {
+  bytes data     = 1;           // Opus пакет (обычно 20–60 мс → 20–100 байт)
+  // НЕ добавляем user_login / friend_login сюда — overhead слишком большой
+  // sequence / timestamp — можно добавить позже если jitter/order критичен
+}

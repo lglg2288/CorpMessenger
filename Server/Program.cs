@@ -4,6 +4,7 @@ using Server.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddGrpc();
+builder.Services.AddSingleton<CallManager>();
 
 builder.WebHost.ConfigureKestrel(options =>
 {
@@ -14,11 +15,12 @@ builder.WebHost.ConfigureKestrel(options =>
     options.ListenAnyIP(5204, listenOptions =>
     {
         listenOptions.Protocols = HttpProtocols.Http2;
-        listenOptions.UseHttps("/app/certs/server.pfx", "YourSecurePassword");
+        //listenOptions.UseHttps("/app/certs/server.pfx", "YourSecurePassword");
     });
 });
 
 var app = builder.Build();
+app.MapGrpcService<CallService>();
 app.MapGrpcService<RegisterService>();
 app.MapGrpcService<LoginService>();
 app.MapGrpcService<FriendService>();
