@@ -17,7 +17,10 @@ namespace Client.ViewModels
         private readonly ILoginService _loginService;
         private readonly IRegisterService _registerService;
         private readonly IServiceProvider _services;
-        public RegisterViewModel(IServiceProvider services, MainViewModel parent, ILoginService loginService, IRegisterService registerService)
+        public RegisterViewModel(IServiceProvider services,
+                                 MainViewModel parent,
+                                 ILoginService loginService,
+                                 IRegisterService registerService)
         {
             _services = services;
             _parent = parent;

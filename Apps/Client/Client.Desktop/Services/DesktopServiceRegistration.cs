@@ -12,8 +12,8 @@ namespace Client.Desktop.Services
         public static IServiceCollection AddDesktopServices(this IServiceCollection services)
         {
             services.AddSingleton<IMicrophoneService, DesktopMicrophoneService>();
+            services.AddSingleton<ISecureStorage, DesktopSecureStorage>();
 
-            // другие desktop-специфичные сервисы, если нужно
             return services;
         }
     }

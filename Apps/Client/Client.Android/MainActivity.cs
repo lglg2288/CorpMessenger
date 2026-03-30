@@ -27,7 +27,7 @@ public class MainActivity : AvaloniaMainActivity<App>
     {
         var service = new ServiceCollection()
             .AddAppServices()
-            .AddAndroidServices();
+            .AddAndroidServices(this);
         
         App.services = service.BuildServiceProvider();
 

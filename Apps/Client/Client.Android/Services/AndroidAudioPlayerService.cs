@@ -1,4 +1,5 @@
-﻿using Android.Media;
+﻿using Android.Content;
+using Android.Media;
 using Client.Services;
 using System.Collections.Concurrent;
 using System.Threading;
@@ -11,18 +12,27 @@ namespace Client.Android.Services
         private AudioTrack? _audioTrack;
         private readonly ConcurrentQueue<byte[]> _queue = new();
         private CancellationTokenSource? _cts;
+        private readonly AudioManager _audioManager;
 
         private const int SampleRate = 48000;
 
+        public AndroidAudioPlayerService(Context context)
+        {
+            _audioManager = (AudioManager)context.GetSystemService(Context.AudioService)!;
+        }
+
         public void Start()
         {
+            _audioManager.Mode = Mode.InCommunication;
+            _audioManager.SpeakerphoneOn = false;
+
             int bufferSize = AudioTrack.GetMinBufferSize(
                 SampleRate,
                 ChannelOut.Mono,
                 Encoding.Pcm16bit);
 
             _audioTrack = new AudioTrack(
-                Stream.Music,
+                Stream.VoiceCall,
                 SampleRate,
                 ChannelOut.Mono,
                 Encoding.Pcm16bit,
@@ -63,6 +73,9 @@ namespace Client.Android.Services
             _audioTrack?.Stop();
             _audioTrack?.Release();
             _audioTrack = null;
+
+            _audioManager.SpeakerphoneOn = false;
+            _audioManager.Mode = Mode.Normal;
         }
     }
 }

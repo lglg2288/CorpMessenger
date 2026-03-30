@@ -9,6 +9,15 @@
              >
   
     <StackPanel>
+      <Button  x:Name="BackButton"
+                         Content="↩"
+                         Background="#4A9EFF"
+                         Foreground="White"
+                         BorderThickness="0"
+                         CornerRadius="20"
+                         Padding="15,8"
+                         FontWeight="Bold"
+                         Command="{Binding ClickBackBtnCommand}"/>
       <TextBlock x:Name="ChatsTitle"
                  Text="{Binding StatusMessage}"
                  FontSize="20"

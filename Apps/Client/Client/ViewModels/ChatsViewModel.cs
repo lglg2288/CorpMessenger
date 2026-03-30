@@ -1,16 +1,17 @@
-﻿using Client.Models;
+﻿using Avalonia.Threading;
+using Client.Models;
 using Client.Services;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using MessengerAvalonia.Shared.FriendsGrpc;
+using MessengerAvalonia.Shared.LoginGrpc;
+using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
 using System.Threading.Tasks;
 using System.Timers;
-using Avalonia.Threading;
-using Microsoft.Extensions.DependencyInjection;
 
 namespace Client.ViewModels
 {
@@ -20,14 +21,23 @@ namespace Client.ViewModels
         private readonly IFriendService _friendService;
         private Timer _updateTimer;
         private readonly IServiceProvider _services;
+        private readonly ISecureStorage _secureStorage;
 
-        public ChatsViewModel(IServiceProvider services, MainViewModel parent, IFriendService chatsService)
+        public ChatsViewModel(IServiceProvider services, MainViewModel parent, IFriendService chatsService,
+            ISecureStorage secureStorage)
         {
             _services = services;
             _parent = parent;
             _friendService = chatsService;
             LoadFriendsAsync();
             StartAutoUpdate();
+            _secureStorage = secureStorage;
+
+            _secureStorage.SaveAsync("login", Client.Models.UserSelf.login);
+            _secureStorage.SaveAsync("password", Client.Models.UserSelf.password);
+            Console.WriteLine("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+            Console.WriteLine(UserSelf.login);
+            Console.WriteLine(UserSelf.password);
         }
 
         [ObservableProperty]
@@ -52,6 +62,14 @@ namespace Client.ViewModels
                 StatusMessage = ex.Message;
             }
             LoadFriendsAsync();
+        }
+        [RelayCommand]
+        private async Task ClickBackBtn()
+        {
+            await _secureStorage.SaveAsync("login", "");
+            await _secureStorage.SaveAsync("password", "");
+            var vm = ActivatorUtilities.CreateInstance<RegisterViewModel>(_services, _parent);
+            _parent.CurrentView = vm;
         }
 
         private async Task LoadFriendsAsync()
