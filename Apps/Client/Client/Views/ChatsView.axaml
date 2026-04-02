@@ -5,52 +5,125 @@
              x:Class="Client.Views.ChatsView"
              xmlns:vm="using:Client.ViewModels"
              x:DataType="vm:ChatsViewModel"
-             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             >
-  
-    <StackPanel>
-      <Button  x:Name="BackButton"
-                         Content="↩"
-                         Background="#4A9EFF"
-                         Foreground="White"
-                         BorderThickness="0"
-                         CornerRadius="20"
-                         Padding="15,8"
-                         FontWeight="Bold"
-                         Command="{Binding ClickBackBtnCommand}"/>
-      <TextBlock x:Name="ChatsTitle"
-                 Text="{Binding StatusMessage}"
-                 FontSize="20"
-                 Margin="0,0,0,10"/>
-	  <StackPanel Orientation="Horizontal" Spacing="5">
-          <TextBox x:Name="FriendsLoginTextBox"
-                   Watermark="Введите логин друга"
-                   Padding="8,6"
-                   Text="{Binding FriendsLogin}"/>
-          <Button x:Name="AddFriendButton"
-                  Content="Добавить"
-                  Padding="20,8"
-                  Command="{Binding ClickAddFriendCommand}"/>
-    </StackPanel>
-      
-        <ScrollViewer>
+             mc:Ignorable="d" d:DesignWidth="400" d:DesignHeight="800"
+             Background="#111118">
+
+    <Grid RowDefinitions="Auto,Auto,*">
+
+        <!-- Шапка -->
+        <Border Grid.Row="0"
+                Background="#1C1C28"
+                BorderBrush="#2A2A3A"
+                BorderThickness="0,0,0,1"
+                Padding="16,14">
+            <Grid ColumnDefinitions="*,Auto">
+                <StackPanel Grid.Column="0" VerticalAlignment="Center">
+                    <TextBlock Text="Сообщения"
+                               FontSize="20"
+                               FontWeight="Bold"
+                               Foreground="#E8E8F0"/>
+                    <TextBlock Text="{Binding StatusMessage}"
+                               FontSize="12"
+                               Foreground="#6B6B80"/>
+                </StackPanel>
+
+                <!-- Кнопка выхода -->
+                <Button Grid.Column="1"
+                        Content="Выйти"
+                        Command="{Binding ClickBackBtnCommand}"
+                        Padding="14,8"
+                        FontSize="13"
+                        FontWeight="SemiBold"
+                        Background="#2A1A1A"
+                        Foreground="#FF6B6B"
+                        BorderBrush="#3A2020"
+                        BorderThickness="1"
+                        CornerRadius="8"
+                        VerticalAlignment="Center"/>
+            </Grid>
+        </Border>
+
+        <!-- Добавление друга -->
+        <Border Grid.Row="1"
+                Background="#161622"
+                Padding="16,12">
+            <Grid ColumnDefinitions="*,Auto" >
+                <TextBox Grid.Column="0"
+                         x:Name="FriendsLoginTextBox"
+                         Watermark="Найти или добавить пользователя..."
+                         Padding="12,10"
+                         FontSize="14"
+                         Background="#13131E"
+                         Foreground="#E8E8F0"
+                         BorderBrush="#2E2E42"
+                         BorderThickness="1"
+                         CornerRadius="10,0,0,10"
+                         Text="{Binding FriendsLogin}"/>
+                <Button Grid.Column="1"
+                        x:Name="AddFriendButton"
+                        Content="Добавить"
+                        Command="{Binding ClickAddFriendCommand}"
+                        Padding="16,10"
+                        FontSize="14"
+                        FontWeight="SemiBold"
+                        Background="#5B5BF6"
+                        Foreground="White"
+                        BorderThickness="0"
+                        CornerRadius="0,10,10,0"/>
+            </Grid>
+        </Border>
+
+        <!-- Список друзей -->
+        <ScrollViewer Grid.Row="2" Padding="12,8">
             <ItemsControl ItemsSource="{Binding Friends}">
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
-                        <StackPanel Spacing="8"/>  <!-- вертикальный стек, как было -->
+                        <StackPanel Spacing="4"/>
                     </ItemsPanelTemplate>
                 </ItemsControl.ItemsPanel>
-
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
-                        <Button Content="{Binding}"
-                                HorizontalAlignment="Stretch"
-                                HorizontalContentAlignment="Left"
+                        <Button HorizontalAlignment="Stretch"
+                                HorizontalContentAlignment="Stretch"
+                                Padding="0"
+                                Background="Transparent"
+                                BorderThickness="0"
                                 Command="{Binding $parent[UserControl].DataContext.OpenChatCommand}"
-                                CommandParameter="{Binding}"/>
+                                CommandParameter="{Binding}">
+                            <Border Background="#1C1C28"
+                                    CornerRadius="12"
+                                    Padding="14,12">
+                                <Grid ColumnDefinitions="Auto,*">
+                                    <!-- Аватар-заглушка -->
+                                    <Border Grid.Column="0"
+                                            Width="44" Height="44"
+                                            CornerRadius="22"
+                                            Background="#2E2E50"
+                                            Margin="0,0,12,0">
+                                        <TextBlock Text="{Binding [0]}"
+                                                   FontSize="18"
+                                                   FontWeight="Bold"
+                                                   Foreground="#9090C8"
+                                                   HorizontalAlignment="Center"
+                                                   VerticalAlignment="Center"/>
+                                    </Border>
+                                    <!-- Имя -->
+                                    <StackPanel Grid.Column="1" VerticalAlignment="Center">
+                                        <TextBlock Text="{Binding}"
+                                                   FontSize="15"
+                                                   FontWeight="SemiBold"
+                                                   Foreground="#E8E8F0"/>
+                                        <TextBlock Text="Нажмите чтобы открыть чат"
+                                                   FontSize="12"
+                                                   Foreground="#55556A"/>
+                                    </StackPanel>
+                                </Grid>
+                            </Border>
+                        </Button>
                     </DataTemplate>
                 </ItemsControl.ItemTemplate>
             </ItemsControl>
         </ScrollViewer>
-  </StackPanel>
+
+    </Grid>
 </UserControl>

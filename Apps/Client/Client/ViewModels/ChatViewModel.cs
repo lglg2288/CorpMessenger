@@ -90,24 +90,10 @@ namespace Client.ViewModels
         }
 
         [RelayCommand]
-        private async void Call()
+        private void Call()
         {
-            try
-            {
-                _audioPlayer.Start();
-                _callService.onAudioChunkReceived += async (byte[] bytes) =>
-                {
-                    chatname = bytes.Length.ToString();
-                    _audioPlayer.PlayChunk(bytes);
-                };
-                await _callService.StartCallAsync(Models.UserSelf.login, Models.CurrentChat.friendLogin);
-
-            }
-            catch (Exception ex)
-            {
-                
-            }
-            return;
+            var vm = ActivatorUtilities.CreateInstance<CallViewModel>(_services, _parent);
+            _parent.CurrentView = vm;
         }
 
         [RelayCommand]

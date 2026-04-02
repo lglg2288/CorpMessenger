@@ -5,33 +5,123 @@
              xmlns:vm="using:Client.ViewModels"
              mc:Ignorable="d" d:DesignWidth="350" d:DesignHeight="800"
              x:Class="Client.Views.RegisterView"
-			 x:DataType="vm:RegisterViewModel">
+             x:DataType="vm:RegisterViewModel"
+             Background="#111118">
 
-		<ScrollViewer>
-			<StackPanel Spacing="12">
-				<TextBlock Text="Добро пожаловать в ..." Margin="0,20,0,10"/>
-				<TextBlock Text="Логин:"/>
-				<TextBox x:Name="LoginTextBox"
-						 Text="{Binding Login}"
-						 Watermark="Введите логин"
-						 Padding="8,6"/>
-				<TextBlock Text="Пароль:"/>
-				<TextBox x:Name="PasswordTextBox"
-						 Text="{Binding Password}"
-						 PasswordChar="•"
-						 Watermark="Введите пароль"
-						 Padding="8,6"/>
-				<Button x:Name="RegistrationButton"
-							Content="Зарегистрироваться"
-							Padding="20,8"
-							Command="{Binding RegisterCommand}"/>
-				<Button x:Name="LoginButton"
-							Content="Войти"
-							Padding="20,8"
-							Classes="primary"
-							Command="{Binding LoginCommand}"/>
-				<TextBlock x:Name="InformationTextBlock"
-						   Text="{Binding ErrorMessage}"/>
-			</StackPanel>
-		</ScrollViewer>
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <Grid RowDefinitions="*,Auto,*" MinHeight="600">
+
+            <!-- Верхний spacer -->
+            <Grid Grid.Row="0"/>
+
+            <!-- Карточка по центру -->
+            <Border Grid.Row="1"
+                    Background="#1C1C28"
+                    CornerRadius="20"
+                    Padding="32,36"
+                    Margin="24,0"
+                    BoxShadow="0 8 40 0 #40000000">
+                <StackPanel Spacing="0">
+
+                    <!-- Логотип / заголовок -->
+                    <Image Source="avares://Client/Assets/avalonia-logo.ico"
+                           HorizontalAlignment="Center"
+                           Height="80"
+                           Margin="0,0,0,8"/>
+                    <TextBlock Text="CorpMessenger"
+                               FontSize="24"
+                               FontWeight="Bold"
+                               Foreground="#E8E8F0"
+                               HorizontalAlignment="Center"
+                               Margin="0,0,0,4"/>
+                    <TextBlock Text="Войдите или создайте аккаунт"
+                               FontSize="13"
+                               Foreground="#6B6B80"
+                               HorizontalAlignment="Center"
+                               Margin="0,0,0,32"/>
+
+                    <!-- Логин -->
+                    <TextBlock Text="Логин"
+                               FontSize="12"
+                               FontWeight="SemiBold"
+                               Foreground="#9090A8"
+                               Margin="0,0,0,6"/>
+                    <TextBox x:Name="LoginTextBox"
+                             Text="{Binding Login}"
+                             Watermark="Введите логин"
+                             Padding="14,12"
+                             FontSize="15"
+                             Background="#13131E"
+                             Foreground="#E8E8F0"
+                             BorderBrush="#2E2E42"
+                             BorderThickness="1"
+                             CornerRadius="10"
+                             Margin="0,0,0,16"/>
+
+                    <!-- Пароль -->
+                    <TextBlock Text="Пароль"
+                               FontSize="12"
+                               FontWeight="SemiBold"
+                               Foreground="#9090A8"
+                               Margin="0,0,0,6"/>
+                    <TextBox x:Name="PasswordTextBox"
+                             Text="{Binding Password}"
+                             PasswordChar="•"
+                             Watermark="Введите пароль"
+                             Padding="14,12"
+                             FontSize="15"
+                             Background="#13131E"
+                             Foreground="#E8E8F0"
+                             BorderBrush="#2E2E42"
+                             BorderThickness="1"
+                             CornerRadius="10"
+                             Margin="0,0,0,24"/>
+
+                    <!-- Кнопка Войти -->
+                    <Button x:Name="LoginButton"
+                            Content="Войти"
+                            HorizontalAlignment="Stretch"
+                            HorizontalContentAlignment="Center"
+                            Padding="0,14"
+                            FontSize="15"
+                            FontWeight="SemiBold"
+                            Background="#5B5BF6"
+                            Foreground="White"
+                            BorderThickness="0"
+                            CornerRadius="10"
+                            Margin="0,0,0,10"
+                            Command="{Binding LoginCommand}"/>
+
+                    <!-- Кнопка Зарегистрироваться -->
+                    <Button x:Name="RegistrationButton"
+                            Content="Зарегистрироваться"
+                            HorizontalAlignment="Stretch"
+                            HorizontalContentAlignment="Center"
+                            Padding="0,14"
+                            FontSize="15"
+                            FontWeight="SemiBold"
+                            Background="#2A2A3E"
+                            Foreground="#9090C8"
+                            BorderBrush="#3A3A52"
+                            BorderThickness="1"
+                            CornerRadius="10"
+                            Command="{Binding RegisterCommand}"/>
+
+                    <!-- Сообщение об ошибке -->
+                    <TextBlock x:Name="InformationTextBlock"
+                               Text="{Binding ErrorMessage}"
+                               Foreground="#FF6B6B"
+                               FontSize="13"
+                               TextWrapping="Wrap"
+                               HorizontalAlignment="Center"
+                               Margin="0,16,0,0"/>
+
+                </StackPanel>
+            </Border>
+
+            <!-- Нижний spacer -->
+            <Grid Grid.Row="2"/>
+
+        </Grid>
+    </ScrollViewer>
 </UserControl>

@@ -21,6 +21,7 @@ namespace Client.Services
             services.AddTransient<RegisterViewModel>();
             services.AddTransient<ChatViewModel>();
             services.AddTransient<ChatsViewModel>();
+            services.AddTransient<CallViewModel>();
 
             // Другие общие вещи...
             services.AddSingleton(sp => Models.CurrentGrpcChannel.channel);
